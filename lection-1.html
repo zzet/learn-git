@@ -1,0 +1,350 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>Git. Просто git. Lection 1.</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+</head>
+<body class="list">
+
+	<header class="caption">
+		<h1>Git. Просто git.</h1>
+		<p>Лекция 1.</p>
+		<p>undev.coursify.ru</p>
+	</header>
+
+	<section class="slide cover" id="Cover"><div>
+		<h2>Git. Просто git.</h2>
+		<p>undev.coursify.ru</p>
+		<img src="pictures/cover.jpg" alt="">
+		<!--
+			To apply styles to the certain slides
+			set slide ID to get needed elements
+			-->
+		<style>
+			#Cover h2 {
+				margin:30px 0 0;
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				}
+			#Cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-style:italic;
+				font-size:20px;
+				}
+				#Cover p a {
+					color:#FFF;
+					}
+		</style>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Лекция 1.</h2>
+		<ol>
+			<li>О контроле версий</li>
+			<li>Краткая история Git.</li>
+			<li>Основы git.</li>
+			<li>Установка git.</li>
+			<li>Первоначальная настройка.</li>
+			<li>Как получить помощь.</li>
+			<li>Итоги.</li>
+		</ol>
+		<p class="note"></p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>О контроле версий.</h2>
+    <br />
+    <br />
+    <figure>
+    <blockquote>
+      Система контроля версий (СКВ) — это система, регистрирующая изменения 
+      в одном или нескольких файлах с тем, чтобы в дальнейшем была 
+      возможность вернуться к определённым старым версиям этих файлов.
+    </blockquote>
+    </figure>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Локальные системы контроля версий</h2>
+    <ol>
+			<li>Создали файл</li>
+			<li class="next">Написали код</li>
+			<li class="next">Сохранили файл</li>
+			<li class="next">Выпустили релиз</li>
+      <li class="next">Сделали резервную копию</li>
+			<li class="next">Начали работать над новыми фичами</li>
+			<li class="next">Послупил фидбек. Баги :(.</li>
+			<li class="next">Делаем резервную копию текущего файла, достаем предудущий.</li>
+      <li class="next">Вносим правки, выкатываем изменения. Делаем резервную копию.</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Локальные системы контроля версий</h2>
+    <ol>
+			<li>Создали файл</li>
+			<li>Написали код</li>
+			<li>Сохранили файл</li>
+			<li>Выпустили релиз</li>
+      <li><mark>Сделали резервную копию</mark></li>
+			<li>Начали работать над новыми фичами</li>
+			<li>Послупил фидбек. Баги :(.</li>
+      <li><mark>Делаем резервную копию</mark> текущего файла, достаем предудущий.</li>
+      <li>Вносим правки, выкатываем изменения. <mark>Делаем резервную копию</mark>.</li>
+		</ol>
+	</div></section>
+
+  <section class="slide shout"><div>
+		<h2>Стоп!</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<figure>
+      <img src="pictures/huina.jpeg" />
+		</figure>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Они все же существуют.</h2>
+		<figure>
+      <img src="pictures/local-scm-1.png" />
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>RCS (Revision Control System)</h2>
+    <p>Пример сессии</p>
+    <ol>
+      <li class="next">ci file.txt</li>
+      <li class="next">co file.txt</li>
+      <li class="next">ci file.txt</li>
+		</ol>
+    <p class="note">RCS была разработана в начале 1980-х годов Вальтером Тичи (Walter F. Tichy).</p>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Недостатки</h2>
+    <ol>
+      <li>Работа только с одним файлом, каждый файл должен контролироваться отдельно;</li>
+      <li>Неудобный механизм одновременной работы нескольких пользователей с системой, хранилище просто блокируется пока заблокировавший его пользователь не разблокирует его;</li>
+      <li>От бекапов вас никто не освобождает, вы рискуете потерять всё.</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Централизованные СКВ</h2>
+		<figure>
+      <img src="pictures/local-scm-2.png" />
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>CVS (Concurrent Versions System)</h2>
+    <p>Пример сессии</p>
+    <ol>
+      <li class="next">cd some-project</li>
+      <li class="next">cvs import -m "New project" path-in-repository none start</li>
+      <li class="next">cd some-working-dir</li>
+      <li class="next">cvs checkout path-in-repository</li>
+      <li class="next">cvs commit -m "Some changes"</li>
+      <li class="next">cvs update</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Недостатки</h2>
+    <ol>
+      <li>Нет возможности сохранять версии директорий. Стандартный способ обойти это препятствие - это сохранить какой-либо файл (например, README.txt) в директории;</li>
+      <li>Перемещение, или переименование файлов не подвержено контролю версий. Стандартный способ сделать это: сначала скопировать файл, удалить старый с помощью команды <mark>cvs remove</mark> и затем добавить с его новым именем с помощью команды <mark>cvs add</mark>;</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Subversion (SVN)</h2>
+    <ol>
+      <li>Атомарное внесение изменений (commit). В случае если обработка коммита была прервана не будет внесено никаких изменений.</li>
+      <li>Переименование, копирование и перемещение файлов сохраняет всю историю изменений.</li>
+      <li>Директории, символические ссылки и мета-данные подвержены контролю версий.</li>
+      <li>Эффективное хранение изменений для бинарных файлов.</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Subversion (SVN)</h2>
+    <p>Пример сессии</p>
+    <ol>
+      <li class="next">cd some-project</li>
+      <li class="next">svn import -m "New project" path-in-repository</li>
+      <li class="next">cd some-working-dir</li>
+      <li class="next">svn checkout path-in-repository</li>
+      <li class="next">svn commit -m "Some changes"</li>
+      <li class="next">svn update <mark class="comment">(up)</mark></li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Распределённые СКВ</h2>
+		<figure>
+      <img src="pictures/local-scm-3.png" height="400px" />
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Subversion (SVN)</h2>
+    <ol>
+      <li><mark>Git</mark> (http://git-scm.com/)</li>
+      <li><mark>Mercurial</mark> (http://www.selenic.com/mercurial/)</li>
+      <li><mark>Bazaar</mark> (http://bazaar-vcs.org/)</li>
+      <li><mark>Codeville</mark> (http://codeville.org/)</li>
+      <li><mark>Darcs</mark> (http://darcs.net/)</li>
+      <li><mark>Monotone</mark> (http://monotone.ca/)</li>
+    </ol>
+  </div></section>
+
+  <section class="slide"><div>
+		<h2>Краткая история Git</h2>
+    <p>Основные требования</p>
+    <ol>
+      <li class="next">Скорость</li>
+      <li class="next">Простота дизайна</li>
+      <li class="next">Поддержка нелинейной разработки (тысячи параллельных веток)</li>
+      <li class="next">Полная распределённость</li>
+      <li class="next">Возможность эффективной работы с такими большими проектами, как ядро Linux (как по скорости, так и по размеру данных)</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Распределённые СКВ</h2>
+    <ul>
+      <li><img src="pictures/scm-1.png" style="width: 400px" /></li>
+      <li class="next"><img src="pictures/scm-2.png" style="width: 400px" /></li>
+    </ul>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Отличия Git</h2>
+    <ol>
+      <li class="next">Почти все операции — локальные</li>
+      <li class="next">Git следит за целостностью данных</li>
+      <li class="next">Чаще всего данные в Git только добавляются</li>
+      <li class="next">Три состояния
+        <ul>
+          <li class="next">каталог Git’а (Git directory),</li>
+          <li class="next">рабочий каталог (working directory),</li>
+          <li class="next">область подготовленных файлов (staging area).</li>
+        </ul>
+      </li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Установка Git</h2>
+    <ol>
+      <li>Установка собранного пакета для вашей платформы</li>
+      <li>Установка из исходников
+        <ul class="next">
+          <li>curl</li>
+          <li>zlib</li>
+          <li>openssl</li>
+          <li>expat</li>
+          <li>libiconv</li>
+        </ul>
+      </li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Первоначальная настройка Git</h2>
+    <ol>
+      <li>git config</li>
+      <li>Виды конфигурации
+        <ul class="next">
+          <li>Общие для всех пользователей системы (<mark>git config --system</mark>)</li>
+          <li>Настройки для конкретного пользователя (<mark>git config --global</mark>)</li>
+          <li>Конфигурационный файл в каталоге Git’а (<mark>git config</mark>)</li>
+        </ul>
+      </li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Первоначальная настройка Git</h2>
+    <p>Данные пользователя</p>
+    <ol>
+      <li>git config --global user.name <mark>"John Doe"</mark></li>
+      <li>git config --global user.email <mark>johndoe@example.com</mark></li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Первоначальная настройка Git</h2>
+    <p>Выбор редактора</p>
+    <ol>
+      <li>git config --global core.editor <mark>emacs</mark></li>
+      <li>git config --global core.editor <mark>vim</mark></li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Первоначальная настройка Git</h2>
+    <ol>
+      <li>git config --global merge.tool <mark>vimdiff</mark></li>
+      <li>git config --global merge.tool <mark>kdiff3</mark></li>
+      <li>git config --global merge.tool <mark>tkdiff</mark></li>
+      <li>git config --global merge.tool <mark>meld</mark></li>
+      <li>git config --global merge.tool <mark>xxdiff</mark></li>
+      <li>git config --global merge.tool <mark>emerge</mark></li>
+      <li>git config --global merge.tool <mark>gvimdiff</mark></li>
+      <li>git config --global merge.tool <mark>ecmerge</mark></li>
+      <li>git config --global merge.tool <mark>opendiff</mark></li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Проверка настроек</h2>
+    <ul>
+      <li>git config --list
+      <pre>
+        <code>user.name=Scott Chacon</code>
+        <code>user.email=schacon@gmail.com</code>
+        <code>...</code>
+        <code>color.status=auto</code>
+        <code>color.diff=auto</code>
+        </pre>
+      </li>
+      <li>git config <mark>user.name</mark></li>
+    </ul>
+  </div></section>
+
+  <section class="slide"><div>
+		<h2>Как получить помощь?</h2>
+    <ol>
+      <li>git help <mark><команда></mark></li>
+      <li>git <mark><команда></mark> --help</li>
+      <li>man git-<mark><команда></mark></li>
+		</ol>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>На сегодня хватит :)</h2>
+	</div></section>
+
+	<section class="slide"><div>
+    <h2>И напоследок...</h2>
+    <p>Оставляем фидбек - <a href="http://undev.coursify.ru/courses/18">http://undev.coursify.ru/courses/18</a></p>
+    <p>Лекция оффлайн - <a href="http://zzet.org/">http://zzet.org/</a></p>
+    <p>Twitter - <a href="https://twitter.com/zzetorg">@zzetorg</a></p>
+	</div></section>
+
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2013 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
