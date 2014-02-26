@@ -47,12 +47,13 @@
 		<h2>Лекция 1.</h2>
 		<ol>
 			<li>О контроле версий</li>
-			<li>Краткая история Git.</li>
-			<li>Основы git.</li>
-			<li>Установка git.</li>
-			<li>Первоначальная настройка.</li>
-			<li>Как получить помощь.</li>
-			<li>Итоги.</li>
+			<li>Какие СУВ бывают</li>
+			<li>Краткая история Git</li>
+			<li>Основы git</li>
+			<li>Установка git</li>
+			<li>Первоначальная настройка</li>
+			<li>Как получить помощь</li>
+			<li>Итоги</li>
 		</ol>
 		<p class="note"></p>
 	</div></section>
@@ -63,8 +64,8 @@
     <br />
     <figure>
     <blockquote>
-      Система контроля версий (СКВ) — это система, регистрирующая изменения 
-      в одном или нескольких файлах с тем, чтобы в дальнейшем была 
+      Система контроля версий (СКВ) — это система, регистрирующая изменения
+      в одном или нескольких файлах с тем, чтобы в дальнейшем была
       возможность вернуться к определённым старым версиям этих файлов.
     </blockquote>
     </figure>
@@ -75,13 +76,12 @@
     <ol>
 			<li>Создали файл</li>
 			<li class="next">Написали код</li>
-			<li class="next">Сохранили файл</li>
-			<li class="next">Выпустили релиз</li>
+			<li class="next">Сохранили файл, выпустили релиз</li>
       <li class="next">Сделали резервную копию</li>
 			<li class="next">Начали работать над новыми фичами</li>
-			<li class="next">Послупил фидбек. Баги :(.</li>
-			<li class="next">Делаем резервную копию текущего файла, достаем предудущий.</li>
-      <li class="next">Вносим правки, выкатываем изменения. Делаем резервную копию.</li>
+			<li class="next">Поступил фидбек. Баги :(</li>
+			<li class="next">Делаем резервную копию текущего файла, достаем предыдущий</li>
+      <li class="next">Вносим правки, выкатываем изменения. Делаем резервную копию</li>
 		</ol>
 	</div></section>
 
@@ -90,31 +90,35 @@
     <ol>
 			<li>Создали файл</li>
 			<li>Написали код</li>
-			<li>Сохранили файл</li>
-			<li>Выпустили релиз</li>
+			<li>Сохранили файл, выпустили релиз</li>
       <li><mark>Сделали резервную копию</mark></li>
 			<li>Начали работать над новыми фичами</li>
-			<li>Послупил фидбек. Баги :(.</li>
-      <li><mark>Делаем резервную копию</mark> текущего файла, достаем предудущий.</li>
-      <li>Вносим правки, выкатываем изменения. <mark>Делаем резервную копию</mark>.</li>
+			<li>Поступил фидбек. Баги :(</li>
+      <li><mark>Делаем резервную копию</mark> текущего файла, достаем предыдущий</li>
+      <li>Вносим правки, выкатываем изменения. <mark>Делаем резервную копию</mark></li>
 		</ol>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Какие варианты?</h2>
+    <img src="pictures/lscm-3.png" alt="1" class="next" />
+    <img src="pictures/lscm-2.png" alt="2" class="next" />
+    <img src="pictures/lscm-1.png" alt="3" class="next" />
 	</div></section>
 
   <section class="slide shout"><div>
 		<h2>Стоп!</h2>
 	</div></section>
 
-	<section class="slide"><div>
+	<section class="slide cover"><div>
 		<figure>
-      <img src="pictures/huina.jpeg" />
+      <img src="pictures/huina.jpeg" width="100%" alt="4" />
 		</figure>
 	</div></section>
 
 	<section class="slide"><div>
 		<h2>Они все же существуют.</h2>
-		<figure>
-      <img src="pictures/local-scm-1.png" />
-		</figure>
+    <center><img src="pictures/local-scm-1.png" alt="5" style="margin: 0px auto" /></center>
 	</div></section>
 
   <section class="slide"><div>
@@ -140,7 +144,7 @@
   <section class="slide"><div>
     <h2>Централизованные СКВ</h2>
 		<figure>
-      <img src="pictures/local-scm-2.png" />
+    <center><img src="pictures/local-scm-2.png" alt="6" /></center>
 		</figure>
 	</div></section>
 
@@ -191,12 +195,12 @@
   <section class="slide"><div>
     <h2>Распределённые СКВ</h2>
 		<figure>
-      <img src="pictures/local-scm-3.png" height="400px" />
+    <center><img src="pictures/local-scm-3.png" alt="7" height="400px" /></center>
 		</figure>
 	</div></section>
 
   <section class="slide"><div>
-		<h2>Subversion (SVN)</h2>
+		<h2>Распределённые СКВ</h2>
     <ol>
       <li><mark>Git</mark> (http://git-scm.com/)</li>
       <li><mark>Mercurial</mark> (http://www.selenic.com/mercurial/)</li>
@@ -228,7 +232,7 @@
 	</div></section>
 
   <section class="slide"><div>
-		<h2>Отличия Git</h2>
+    <h2>Отличия/требования к Git</h2>
     <ol>
       <li class="next">Почти все операции — локальные</li>
       <li class="next">Git следит за целостностью данных</li>
