@@ -1,0 +1,668 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>Git. Просто git. Lection 2.</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+</head>
+<body class="list">
+
+	<header class="caption">
+		<h1>Git. Просто git.</h1>
+		<p>Лекция 2.</p>
+		<p>undev.coursify.ru</p>
+	</header>
+
+	<section class="slide cover" id="Cover"><div>
+		<h2>Git. Просто git.</h2>
+		<p>undev.coursify.ru</p>
+		<img src="pictures/cover.jpg" alt="">
+		<!--
+			To apply styles to the certain slides
+			set slide ID to get needed elements
+			-->
+		<style>
+			#Cover h2 {
+				margin:30px 0 0;
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				}
+			#Cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-style:italic;
+				font-size:20px;
+				}
+				#Cover p a {
+					color:#FFF;
+					}
+		</style>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Лекция 2.</h2>
+    <ul style="float: left; width: 450px;">
+      <li>Создание Git-репозитория</li>
+      <li>Запись изменений в репозиторий</li>
+      <li>Просмотр истории коммитов</li>
+      <li>Отмена изменений</li>
+      <li>Работа с удалёнными реп.</li>
+      <li>Работа с метками</li>
+      <li>Полезные советы</li>
+    </ul>
+
+    <ul>
+      <li>Что такое ветка?</li>
+      <li>Основы ветвления и слияния</li>
+      <li>Управление ветками</li>
+      <li>Приёмы работы с ветками</li>
+      <li>Удалённые ветки</li>
+      <li>Перемещение</li>
+      <li>Итоги</li>
+    </ul>
+		<p class="note"></p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Создание git репозитория</h2>
+    <ul>
+      <li>$ cd some-project-path</li>
+      <li class="next">$ <mark>git init</mark></li>
+      <li class="next">$ git add <mark>*.c</mark></li>
+      <li class="next">$ git add <mark>README</mark></li>
+      <li class="next">$ git add <mark>.</mark></li>
+      <li class="next">$ <mark>git commit</mark></li>
+    </ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Клонирование существующего репозитория</h2>
+    <ol>
+      <li>$ <mark>git clone [options] [--] repo [dir]</mark></li>
+      <li class="next">$ git clone <mark>git://github.com/libgit2/rugged.git</mark></li>
+      <li class="next">$ git clone git://github.com/libgit2/rugged.git <mark>myrugged</mark></li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Запись изменений в репозиторий</h2>
+    <figure>
+      <center><img src="pictures/18333fig0201-tn.png" alt="1" /></center>
+    </figure>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Определение состояния файлов</h2>
+    <p>$ <mark>git status</mark></p>
+    <ul>
+      <li class="next">Untracked</li>
+      <li class="next">Modified</li>
+      <li class="next">Added to commit</li>
+    </ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Отслеживание и индексация файлов</h2>
+    <br />
+    <br />
+    <ul>
+      <li class="next">git add</li>
+      <li class="next">git add -a</li>
+    </ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Игнорирование файлов</h2>
+    <br />
+    <br />
+    <ul>
+      <li class="next">.gitignore</li>
+    </ul>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Просмотр индексированных и неиндексированных изменений</h2>
+    <ol>
+      <li class="next">git status</li>
+      <li class="next">git diff</li>
+      <li class="next">git diff --staged</li>
+      <li class="next">git diff <mark>file</mark></li>
+      <li class="next">git diff <mark>revision</mark></li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Фиксация изменений</h2>
+    <ol>
+      <li>$ git commit</li>
+      <li class="next">$ git commit -m "Commit message"</li>
+		</ol>
+
+    <ol>
+      <li class="next">$EDITOR</li>
+      <li class="next">$ git config --global core.editor</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Удаление файлов</h2>
+    <ul>
+      <li class="next">rm file.txt</li>
+      <li class="next">git rm file.txt</li>
+      <li class="next">git rm -f file.txt</li>
+      <li class="next">git rm --cached file.txt</li>
+    </ul>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Перемещение файлов</h2>
+    <ol>
+      <li class="next">git mv file_from file_to</li>
+    </ol>
+    <br />
+    <ol>
+      <li class="next">mv README.txt README</li>
+      <li class="next">git rm README.txt</li>
+      <li class="next">git add README</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Просмотр истории коммитов</h2>
+    <ol>
+      <li>git log</li>
+      <li>git log -p -2</li>
+      <li>git log -p --word-diff</li>
+      <li>git log --stat</li>
+      <li>git log --pretty=oneline</li>
+      <li>git log --pretty=format:"%h - %an, %ar : %s"</li>
+      <li>git log --graph</li>
+      <li>git log --since=2.weeks</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Изменение последнего коммита</h2>
+    <p><mark>git commit --amend</mark></p>
+    <ol>
+      <li class="next">git commit -m 'initial commit'</li>
+      <li class="next">git add forgotten_file</li>
+      <li class="next">git commit --amend</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Отмена индексации файла</h2>
+    <p><mark>git reset</mark></p>
+    <ol>
+      <li class="next">git add .</li>
+      <li class="next">git status</li>
+      <li class="next">git reset HEAD benchmarks.rb</li>
+      <li class="next">git status</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Отмена изменений файла</h2>
+    <p><mark>git checkout</mark></p>
+    <ol>
+      <li class="next">git add .</li>
+      <li class="next">git status</li>
+      <li class="next">git checkout -- benchmarks.rb</li>
+      <li class="next">git status</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Работа с удаленными репозиториями</h2>
+		<figure>
+    <center><img src="pictures/local-scm-3.png" alt="7" height="400px" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Отображение удалённых репозиториев</h2>
+    <ol>
+      <li>git clone git://github.com/schacon/ticgit.git</li>
+      <li>cd ticgit</li>
+      <li>git remote</li>
+      <li>git remote -v</li>
+    </ol>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Добавление удалённых репозиториев</h2>
+    <ol>
+      <li>git clone git://github.com/schacon/ticgit.git</li>
+      <li>cd ticgit</li>
+      <li>git remote</li>
+      <li>git remote add pb git://github.com/paulboone/ticgit.git</li>
+      <li>git remote -v</li>
+    </ol>
+  </div></section>
+
+  <section class="slide"><div>
+		<h2>Fetch и Pull</h2>
+    <p>git fetch <mark>[имя удал. сервера]</mark></p>
+    <ol>
+      <li>git fetch <mark>origin</mark></li>
+      <li>git pull <mark>origin</mark></li>
+      <li>git pull --rebase <mark>origin</mark></li>
+    </ol>
+  </div></section>
+
+  <section class="slide"><div>
+		<h2>Push</h2>
+    <p>git push <mark>[удал. сервер] [ветка]</mark></p>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Инспекция удалённого репозитория</h2>
+    <ul>
+      <li class="next">git remote show origin</li>
+    </ul>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Удаление и переименование удалённых репозиториев</h2>
+    <ol>
+      <li class="next">git remote rename pb paul</li>
+      <li class="next">git remote</li>
+      <li class="next">git remote rm paul</li>
+      <li class="next">git remote</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Просмотр меток</h2>
+    <ol>
+      <li>git tag</li>
+      <li class="next">git tag -l 'v1.4.*'</li>
+    </ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Создание меток</h2>
+    <p>Аннотированные метки</p>
+    <ol class="next">
+      <li>git tag -a v1.4 -m 'my version 1.4'</li>
+      <li>git tag</li>
+		</ol>
+    <p class="next">git show</p>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Создание меток</h2>
+    <p>Подписанные метки</p>
+    <ol class="next">
+      <li>git tag -s v1.4 -m 'my version 1.4'</li>
+      <li>git tag</li>
+		</ol>
+    <p class="next">git show</p>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Создание меток</h2>
+    <p>Легковесные метки</p>
+    <ol class="next">
+      <li>git tag v1.4</li>
+      <li>git tag</li>
+		</ol>
+    <p class="next">git show v1.4-lw</p>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Верификация меток</h2>
+    <ol class="next">
+      <li>git tag -v v1.4.2.1</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Выставление меток позже</h2>
+    <p>git tag -a v1.2 -m 'version 1.2' 9fceb02</p>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Обмен метками</h2>
+    <ol>
+      <li>git push origin v1.5</li>
+      <li class="next">git push origin --tags</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Полезные советы</h2>
+    <p>Автоматическое дополнение</p>
+    <ul>
+      <li>echo "source ~/.git-completion.bash" >> ~/.bashrc</li>
+    </ul>
+  </div></section>
+
+  <section class="slide"><div>
+		<h2>Полезные советы</h2>
+    <p>Псевдонимы</p>
+    <ul>
+      <li>$ git config --global alias.co checkout</li>
+      <li>$ git config --global alias.br branch</li>
+      <li>$ git config --global alias.ci commit</li>
+      <li>$ git config --global alias.st status</li>
+    </ul>
+  </div></section>
+
+  <section class="slide shout"><div>
+		<h2>Ветвление в Git</h2>
+	</div></section>
+
+
+  <section class="slide"><div>
+    <h2>Что такое ветка?</h2>
+    <img class="next" src="pictures/2-commit-schema.png" alt="2" >
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Что такое ветка?</h2>
+    <img src="pictures/2-commits-schema.png" alt="2" >
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Что такое ветка?</h2>
+    <img src="pictures/2-branch-concept.png" alt="2" >
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Что такое ветка?</h2>
+    <p>$ git branch testing</p>
+    <img class="next" src="pictures/2-branch-new.png" alt="2" >
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Что такое ветка?</h2>
+    <img src="pictures/2-branch-head.png" alt="2" >
+    <p class="next">$ git checkout testing</p>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Что такое ветка?</h2>
+    <img src="pictures/2-branch-head-checkout.png" alt="2" >
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Что такое ветка?</h2>
+    <img src="pictures/2-branch-head-after-commit.png" alt="2" >
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Что такое ветка?</h2>
+    <img src="pictures/2-branch-head-after-commit-master.png" alt="2" >
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Что такое ветка?</h2>
+    <img src="pictures/2-branch-head-after-commit-in-master.png" alt="2" >
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Основы ветвления</h2>
+    <center><img src="pictures/2-branching-1.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Основы ветвления</h2>
+    <center><img src="pictures/2-branching-2.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Основы ветвления</h2>
+    <center><img src="pictures/2-branching-3.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Основы ветвления</h2>
+    <center><img src="pictures/2-branching-4.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Основы ветвления</h2>
+    <center><img src="pictures/2-branching-5.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Основы ветвления</h2>
+    <center><img src="pictures/2-branching-6.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Основы слияния</h2>
+    <center><img src="pictures/2-branching-merge-1.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Основы слияния</h2>
+    <center><img src="pictures/2-branching-merge-2.png" alt="2" ></center>
+  </div></section>
+
+	<section class="slide cover"><div>
+		<figure>
+      <img src="pictures/Bum_Bum_Bum.jpg" width="100%" alt="4" />
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Конфликты</h2>
+    <center><img src="pictures/2-branching-merge-conflict-1.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Конфликты</h2>
+    <center><img src="pictures/2-branching-merge-conflict-2.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Конфликты</h2>
+    <center><img src="pictures/2-branching-merge-conflict-3.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Конфликты</h2>
+    <center><img src="pictures/2-branching-merge-conflict-4.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Конфликты</h2>
+    <center><img src="pictures/2-branching-merge-conflict-5.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Конфликты</h2>
+    <center><img src="pictures/2-branching-merge-conflict-6.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+		<h2>Управление ветками</h2>
+    <ol>
+      <li>git branch</li>
+      <li class="next">git branch -v</li>
+      <li class="next">git branch --merged (--no-merged)</li>
+      <li class="next">git branch -d branch_name</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Приёмы работы с ветками</h2>
+    <ol>
+      <li>Долгоживущие ветки</li>
+      <li class="next">Тематические ветки</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Долгоживущие ветки</h2>
+    <center><img src="pictures/2-branching-long-live-1.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Долгоживущие ветки</h2>
+    <center><img src="pictures/2-branching-long-live-2.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Тематические ветки</h2>
+    <center><img src="pictures/2-branching-short-live-1.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Тематические ветки</h2>
+    <center><img src="pictures/2-branching-short-live-2.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Удаленные ветки</h2>
+		<figure>
+    <center><img src="pictures/local-scm-3.png" alt="7" height="400px" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Удаленные ветки</h2>
+    <center><img src="pictures/2-branching-remote-1.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Удаленные ветки</h2>
+    <center><img src="pictures/2-branching-remote-2.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Удаленные ветки</h2>
+    <center><img src="pictures/2-branching-remote-3.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Удаленные ветки</h2>
+    <center><img src="pictures/2-branching-remote-4.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Удаленные ветки</h2>
+    <center><img src="pictures/2-branching-remote-5.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+		<h2>Отправка измеений</h2>
+    <ol>
+      <li>$ git push origin serverfix</li>
+      <li class="next">git fetch origin</li>
+      <li class="next">git checkout -b serverfix origin/serverfix</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Отслеживание веток</h2>
+    <ol>
+      <li>$ git checkout -b [ветка] [удал. сервер]/[ветка]</li>
+      <li class="next">$ git checkout --track origin/serverfix</li>
+      <li class="next">$ git checkout -b sf origin/serverfix</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Удаление веток на удаленном сервере</h2>
+    <ol>
+      <li>$ git push origin :serverfix</li>
+      <li class="next">$ git push [удал. сервер] <mark>[лок. ветка]</mark>:[удал. ветка]</li>
+      <li class="next">$ git push [удал. сервер] :[удал. ветка]</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Перемещение</h2>
+    <ol>
+      <li>merge</li>
+      <li class="next">rebase</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Rebase</h2>
+    <center><img src="pictures/2-branching-rebase-1.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Rebase</h2>
+    <center><img src="pictures/2-branching-rebase-2.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Rebase</h2>
+    <center><img src="pictures/2-branching-rebase-3.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Rebase</h2>
+    <center><img src="pictures/2-branching-rebase-4.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Rebase</h2>
+    <center><img src="pictures/2-branching-rebase-5.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Rebase</h2>
+    <center><img src="pictures/2-branching-rebase-6.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Rebase</h2>
+    <center><img src="pictures/2-branching-rebase-7.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Rebase</h2>
+    <center><img src="pictures/2-branching-rebase-8.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Rebase Risks (или как подложить свинью)</h2>
+    <center><img src="pictures/2-branching-rebase-risk-1.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Rebase Risks (или как подложить свинью)</h2>
+    <center><img src="pictures/2-branching-rebase-risk-2.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Rebase Risks (или как подложить свинью)</h2>
+    <center><img src="pictures/2-branching-rebase-risk-3.png" alt="2" ></center>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Rebase Risks (или как подложить свинью)</h2>
+    <center><img src="pictures/2-branching-rebase-risk-4.png" alt="2" ></center>
+  </div></section>
+
+	<section class="slide shout"><div>
+		<h2>На сегодня хватит :)</h2>
+	</div></section>
+
+	<section class="slide"><div>
+    <h2>И напоследок...</h2>
+    <p>Оставляем фидбек - <a href="http://undev.coursify.ru/courses/18">http://undev.coursify.ru/courses/18</a></p>
+    <p>Лекция оффлайн - <a href="http://zzet.org/git/learning/undev/coursify/2014/03/07/lection-2-git-course-undev.html">Тут</a></p>
+    <p>Презентация оффлайн - <a href="http://zzet.org/learn_git/lection-2.html">http://zzet.org/learn_git/lection-2.html</a></p>
+    <p>Все лекции оффлайн - <a href="http://zzet.org/learn-git.html">http://zzet.org/learn-git.html</a></p>
+    <p>Twitter - <a href="https://twitter.com/zzetorg">@zzetorg</a></p>
+	</div></section>
+
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2013 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
