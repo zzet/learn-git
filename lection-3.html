@@ -1,0 +1,523 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<title>Git. Просто git. Lection 1.</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+</head>
+<body class="list">
+
+	<header class="caption">
+		<h1>Git. Просто git.</h1>
+		<p>Лекция 3.</p>
+		<p>undev.coursify.ru</p>
+	</header>
+
+	<section class="slide cover" id="Cover"><div>
+		<h2>Git. Просто git.</h2>
+		<p>undev.coursify.ru</p>
+		<img src="pictures/cover.jpg" alt="">
+		<!--
+			To apply styles to the certain slides
+			set slide ID to get needed elements
+			-->
+		<style>
+			#Cover h2 {
+				margin:30px 0 0;
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				}
+			#Cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-style:italic;
+				font-size:20px;
+				}
+				#Cover p a {
+					color:#FFF;
+					}
+		</style>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Лекция 3.</h2>
+		<ul style="float: left; width: 450px;">
+			<li>Выбор ревизии</li>
+			<li>Интерактивное индексирование</li>
+			<li>Прятанье</li>
+			<li>Перезапись истории</li>
+			<li>Отладка с помощью Git</li>
+      </ul><ul>
+			<li>Подмодули</li>
+			<li>Слияние поддеревьев</li>
+      <li>Конфигурирование Git</li>
+      <li>Перехватчики</li>
+			<li>Итоги</li>
+		</ul>
+		<p class="note"></p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Выбор ревизии</h2>
+    <ol>
+			<li>Одиночные ревизии</li>
+			<li class="next">Сокращённый SHA</li>
+			<li class="next">Ссылки на коммиты</li>
+      <li class="next">RefLog-сокращения</li>
+			<li class="next">Ссылки на предков</li>
+			<li class="next">Диапазон коммитов</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>Диапазон коммитов</h2>
+    <ol>
+			<li>Две точки</li>
+			<li>Множество вершин</li>
+			<li>Три точки</li>
+		</ol>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Интерактивное индексирование</h2>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Интерактивное индексирование</h2>
+    <p>$ git add -i</p>
+		<figure>
+    <center><img src="pictures/3-add-i-1.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Интерактивное индексирование</h2>
+		<figure>
+    <center><img src="pictures/3-add-i-2.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Интерактивное индексирование</h2>
+		<figure>
+    <center><img src="pictures/3-add-i-3.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Интерактивное индексирование</h2>
+		<figure>
+    <center><img src="pictures/3-add-i-4.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Интерактивное индексирование</h2>
+		<figure>
+    <center><img src="pictures/3-add-i-5.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Интерактивное индексирование</h2>
+		<figure>
+    <center><img src="pictures/3-add-i-6.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Интерактивное индексирование</h2>
+		<figure>
+    <center><img src="pictures/3-add-i-7.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Интерактивное индексирование</h2>
+		<figure>
+    <center><img src="pictures/3-add-i-8.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Интерактивное индексирование</h2>
+		<figure>
+    <center><img src="pictures/3-add-i-9.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Интерактивное индексирование</h2>
+		<figure>
+    <center><img src="pictures/3-add-i-10.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Прятанье</h2>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Прятанье</h2>
+		<figure>
+    <center><img src="pictures/3-stash-1.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Прятанье</h2>
+		<figure>
+    <center><img src="pictures/3-stash-2.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Прятанье</h2>
+		<figure>
+    <center><img src="pictures/3-stash-3.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Прятанье</h2>
+		<figure>
+    <center><img src="pictures/3-stash-4.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Прятанье</h2>
+		<figure>
+    <center><img src="pictures/3-stash-5.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Прятанье</h2>
+		<figure>
+    <center><img src="pictures/3-stash-6.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Прятанье</h2>
+		<figure>
+    <center><img src="pictures/3-stash-7.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Прятанье</h2>
+    <p>Откат применения спрятанных изменений</p>
+    <p>$ git stash show -p stash@{0} | git apply -R</p>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Прятанье</h2>
+    <p>Создание ветки из спрятанных изменений</p>
+    <p>$ git stash</p>
+    <p>$ git stash branch testchanges</p>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Перезапись истории</h2>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Перезапись истории</h2>
+    <p>Изменение последнего коммита</p>
+    <p>$ git commit --amend</p>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Перезапись истории</h2>
+    <p>Изменение сообщений нескольких коммитов</p>
+    <p>$ git rebase -i SHA</p>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Перезапись истории</h2>
+		<figure>
+    <center><img src="pictures/3-rebase-i-1.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Перезапись истории</h2>
+		<figure>
+    <center><img src="pictures/3-rebase-i-2.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Перезапись истории</h2>
+		<figure>
+    <center><img src="pictures/3-rebase-i-3.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Перезапись истории</h2>
+		<figure>
+    <center><img src="pictures/3-rebase-i-4.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Переупорядочение коммитов</h2>
+		<figure>
+    <center><img src="pictures/3-rebase-i-5.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Переупорядочение коммитов</h2>
+		<figure>
+    <center><img src="pictures/3-rebase-i-6.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Уплотнение коммитов</h2>
+		<figure>
+    <center><img src="pictures/3-rebase-i-8.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Уплотнение коммитов</h2>
+		<figure>
+    <center><img src="pictures/3-rebase-i-9.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Уплотнение коммитов</h2>
+		<figure>
+    <center><img src="pictures/3-rebase-i-10.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Разбиение коммита</h2>
+		<figure>
+    <center><img src="pictures/3-rebase-i-11.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Разбиение коммита</h2>
+		<figure>
+    <center><img src="pictures/3-rebase-i-12.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Разбиение коммита</h2>
+		<figure>
+    <center><img src="pictures/3-rebase-i-13.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>filter-branch</h2>
+    <p>Удаление файла изо всех коммитов</p>
+		<figure>
+    <center><img src="pictures/3-filter-branch-1.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>filter-branch</h2>
+    <p>Сделать подкаталог новым корнем</p>
+		<figure>
+    <center><img src="pictures/3-filter-branch-2.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>filter-branch</h2>
+    <p>Глобальное изменение e-mail адреса</p>
+		<figure>
+    <center><img src="pictures/3-filter-branch-3.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Отладка с помощью Git</h2>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Отладка с помощью Git</h2>
+    <ul>
+      <li>Аннотация файла</li>
+      <li>Бинарный поиск</li>
+    </ul>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Подмодули</h2>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Начало использования подмодулей</h2>
+		<figure>
+    <center><img src="pictures/3-submodules-1.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Начало использования подмодулей</h2>
+		<figure>
+    <center><img src="pictures/3-submodules-2.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Начало использования подмодулей</h2>
+		<figure>
+    <center><img src="pictures/3-submodules-3.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Начало использования подмодулей</h2>
+		<figure>
+    <center><img src="pictures/3-submodules-4.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Начало использования подмодулей</h2>
+		<figure>
+    <center><img src="pictures/3-submodules-5.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Начало использования подмодулей</h2>
+		<figure>
+    <center><img src="pictures/3-submodules-6.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Клонирование проекта с подмодулями</h2>
+		<figure>
+    <center><img src="pictures/3-submodules-7.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Клонирование проекта с подмодулями</h2>
+		<figure>
+    <center><img src="pictures/3-submodules-8.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Клонирование проекта с подмодулями</h2>
+		<figure>
+    <center><img src="pictures/3-submodules-9.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Клонирование проекта с подмодулями</h2>
+		<figure>
+    <center><img src="pictures/3-submodules-10.png" alt="6" /></center>
+		</figure>
+	</div></section>
+
+  <section class="slide shout"><div>
+    <h2>Конфигурирование Git</h2>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Основные настройки клиента</h2>
+    <ul>
+      <li>core.editor</li>
+      <li>commit.template</li>
+      <li>core.pager</li>
+      <li>user.signingkey</li>
+      <li>core.excludesfile</li>
+      <li>help.autocorrect</li>
+    </ul>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Цвета в Git</h2>
+    <ul>
+      <li>color.ui</li>
+      <li>color.branch</li>
+      <li>color.diff</li>
+      <li>color.interactive</li>
+      <li>color.status</li>
+    </ul>
+	</div></section>
+
+  <section class="slide shout"><div>
+    <h2>Внешние утилиты merge и diff</h2>
+	</div></section>
+
+  <section class="slide shout"><div>
+    <h2>Форматирование и пробельные символы</h2>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Форматирование и пробельные символы</h2>
+    <ul>
+      <li>core.autocrlf</li>
+      <li>$ git config --global core.autocrlf true</li>
+      <li>$ git config --global core.autocrlf input</li>
+      <li>$ git config --global core.autocrlf false</li>
+    </ul>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Форматирование и пробельные символы</h2>
+    <ul>
+      <li>core.whitespace</li>
+      <li>$ git config --global core.whitespace trailing-space,space-before-tab,indent-with-non-tab</li>
+      <li>$ git apply --whitespace=warn патч</li>
+      <li>$ git apply --whitespace=fix патч</li>
+    </ul>
+	</div></section>
+
+  <section class="slide shout"><div>
+    <h2>Перехватчики</h2>
+	</div></section>
+
+  <section class="slide"><div>
+    <h2>Перехватчики</h2>
+    <ul>
+      <li>pre-commit</li>
+      <li>pre-applypatch</li>
+      <li>pre-rebase</li>
+      <li>pre-receive</li>
+      <li>update</li>
+    </ul>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>На сегодня хватит :)</h2>
+	</div></section>
+
+	<section class="slide"><div>
+    <h2>И напоследок...</h2>
+    <p>Оставляем фидбек - <a href="http://undev.coursify.ru/courses/18">http://undev.coursify.ru/courses/18</a></p>
+    <p>Лекция оффлайн - <a href="http://zzet.org/git/learning/undev/coursify/2014/02/09/lection-3-git-course-undev.html">Тут</a></p>
+    <p>Все лекции оффлайн - <a href="http://zzet.org/learn-git.html">http://zzet.org/learn-git.html</a></p>
+    <p>Twitter - <a href="https://twitter.com/zzetorg">@zzetorg</a></p>
+	</div></section>
+
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2013 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
