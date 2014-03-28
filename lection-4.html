@@ -73,10 +73,48 @@
     </ul>
 	</div></section>
 
+  <section class="slide"><div>
+		<h2>Локальный протокол</h2>
+    <ol>
+			<li>$ git clone /opt/git/project.git</li>
+			<li class="next">$ git clone file:///opt/git/project.git</li>
+			<li class="next">$ git remote add local_proj /opt/git/project.git</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>SSH протокол</h2>
+    <ol>
+			<li>$ git clone ssh://user@server/project.git</li>
+			<li class="next">$ git clone user@server/project.git</li>
+			<li class="next">$ git remote add remore_proj user@server/project.git</li>
+		</ol>
+	</div></section>
+
+  <section class="slide"><div>
+		<h2>GIT протокол</h2>
+    <ol>
+			<li>$ git clone git://server.com/opt/git/project.git</li>
+		</ol>
+	</div></section>
+
+
+  <section class="slide"><div>
+		<h2>HTTP(s) протокол</h2>
+    <ol>
+			<li>$ git clone http://server.com/opt/git/project.git</li>
+			<li class="next">Требует настройку хуков на стороне сервера</li>
+		</ol>
+	</div></section>
+
 	<section class="slide"><div>
 		<h2>Настройка Git на сервере</h2>
     <ol>
 			<li>Размещение голого репозитория на сервере</li>
+      <li class="next">$ git clone --bare my_project my_project.git</li>
+      <li class="next">$ cp -Rf my_project/.git my_project.git</li>
+      <li class="next">$ scp -r my_project.git user@git.example.com:/opt/git</li>
+      <li class="next">$ git clone user@git.example.com:/opt/git/my_project.git</li>
 			<li class="next">Малые установки: Доступ по ssh</li>
 		</ol>
 	</div></section>
